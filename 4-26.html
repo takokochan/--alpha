@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style type="text/css">
+div{width: 100px;height: 100px;background: red;margin-top: 20px;filter:alpha(opacity:30);opacity: 0.3;}
+</style>
+<script type="text/javascript">
+
+/*运动框架--透明度*/
+window.onload = function(){
+	var aDiv = document.getElementsByTagName('div');
+
+	for(var i = 0;i<aDiv.length;i++){
+
+		aDiv[i].alpha = 30; //不能共用一个属性
+		aDiv[i].timer = null; //不能共用一个定时器
+
+		aDiv[i].onmouseover = function(){
+			startMove(this,100);
+		}
+		aDiv[i].onmouseout = function(){
+			startMove(this,30);
+		}
+	}
+}
+
+function startMove(obj,itarget){
+	clearInterval(obj.timer);
+	
+	obj.timer = setInterval(function(){
+		ispeed = (itarget - obj.alpha)/10; //注意是itarget - objalpha
+		ispeed>0?Math.ceil(ispeed):Math.floor(ispeed);
+
+		if(obj.alpha == itarget){
+			clearInterval(obj.timer);
+		}
+		else{
+			obj.alpha += ispeed;
+
+			obj.style.filter = 'alpha(opacity:'+obj.alpha+')'; //IE
+			obj.style.opacity = obj.alpha/100; //firefox
+		}
+
+	},10);
+
+}
+
+</script>
+</head>
+
+<body>
+<div></div>
+<div></div>
+<div></div>
+<div></div>
+</body>
+<html>
