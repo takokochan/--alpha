@@ -13,3 +13,17 @@ function getStyle(obj,attr){  </br>
 &nbsp;&nbsp;&nbsp;&nbsp;return getComputerStyle(style,flase)[attr];  </br>
 &nbsp;&nbsp;} </br>
 }
+
+</div>
+        <div class="header_right">
+            <a href="#">消息</a>
+            <a href="#">糯米</a>
+            <a href="#">新闻</a>
+            <a href="#">hao123</a>
+            <a href="#">地图</a>
+            <a href="#">视频</a>
+            <a href="#">贴吧</a>
+            <a href="#">TAKO喵</a>
+            <a href="#">设置</a>
+            <a class="more" href="#">更多产品</a>
+        </div>
