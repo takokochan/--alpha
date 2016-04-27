@@ -11,7 +11,7 @@ alpha.html //关于多个物体透明度变化的运动框架
         if(obj.currentStyle){ 
                 return obj.currentStyle[attr]; 
         }else{ 
-                return getComputerStyle(style,flase)[attr]; 
+                return getComputerStyle(obj,flase)[attr]; 
         } 
     }
 
